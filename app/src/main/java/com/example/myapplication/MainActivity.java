@@ -52,10 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void show() throws IOException {
-        File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-        File file = new File("lol.txt",dir.getPath());
-
-        String outputFile = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/recording.3gp";
+        String outputFile = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/recording.mp3";
 
         myAudioRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
         myAudioRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
@@ -63,12 +60,6 @@ public class MainActivity extends AppCompatActivity {
         myAudioRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
         myAudioRecorder.prepare();
         myAudioRecorder.start();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-
     }
 
     public boolean CheckPermissions() {
